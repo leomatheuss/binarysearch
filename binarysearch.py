@@ -5,14 +5,14 @@ def bubble_sort(array):
     for i in range(len(array)):
         for j in range(len(array)-1-i):
             if array[j] > array[j+1]:
-                array[j], array[j+1] = array[j+1], array[j]
+               array[j], array[j+1] = array[j+1], array[j]
     
-    return array
-
+    return array 
+'''
 def binary_search(vetor, inicio, fim, valor):
-    '''
-    Implementação recursiva
-    '''
+    
+    #Implementação recursiva
+    
     i = fim - inicio // 2
     if vetor[i] == valor:
         return print(i)
@@ -23,7 +23,7 @@ def binary_search(vetor, inicio, fim, valor):
             binary_search(vetor, i + 1, fim, valor)
         else:
             binary_search(vetor, inicio, i-1, valor)
-
+'''
 
 def binary_search2(vetor, x, tam):
     '''
@@ -34,7 +34,7 @@ def binary_search2(vetor, x, tam):
     midrange = 0
 
     while inicio <= fim:
-        midrange = inicio + fim // 2
+        midrange = (inicio + fim )// 2
         if x == vetor[midrange]:
             return print(midrange)
         if x < vetor[midrange]:
@@ -46,7 +46,7 @@ def binary_search2(vetor, x, tam):
 
 
 x = int(input("Valor que deseja encontrar no vetor"))
-vetor = random.sample(range(3000),3000)
+vetor = random.sample(range(2000),2000)
 vetor_arrumado = bubble_sort(vetor)
 tam = len(vetor_arrumado)
 binary_search2(vetor_arrumado, x, tam)
