@@ -1,19 +1,9 @@
 import random
 import time
+import sys
 
-'''
-def bubble_sort(array):
-    comparacao = 0
-    swap = 0
-    for i in range(len(array)):
-        for j in range(len(array)-1-i):
-            if array[j] > array[j+1]:
-               array[j], array[j+1] = array[j+1], array[j]
-               swap += 1
-            comparacao += 1
+sys.setrecursionlimit(300000)
 
-    return print('foram feitas {} comparações e {} swaps'.format(comparacao, swap))
-'''
 def bubble_sort(array):
     comeco = time.time()
     comparacao = 0
@@ -29,7 +19,7 @@ def bubble_sort(array):
     return print("O algoritmo fez {} comparacoes e realizou {} swaps".format(comparacao,swap))
 
 def particao(array, start, stop):
-   
+    
     i = (start -1)
     pivot = array[stop]
     for j in range(start, stop):
@@ -37,6 +27,7 @@ def particao(array, start, stop):
             i += 1
             array[j],array[j] = array[j],array[i]
     array[i+1], array[stop] = array[stop], array[i+1]
+    
     return(i+1)
 
 def quicksort(array, start, stop):
@@ -47,4 +38,3 @@ def quicksort(array, start, stop):
         quicksort(array, start, part_index-1)
         quicksort(array, part_index+1, stop)
 
-  
